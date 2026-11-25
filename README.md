@@ -19,7 +19,7 @@ Each item names a grading class. The grader compares the answer to that item's k
 | :--- | ---: | :--- |
 | `numeric_with_tolerance` | 141 | A number, its unit and the item's tolerance |
 | `exact_match` | 105 | A short canonical value after declared normalization (case, whitespace, the § sign) |
-| `boolean_with_citation` | 53 | A yes/no determination plus the cited section |
+| `boolean_with_citation` | 53 | A yes/no determination. The key names a section, but the grader does not check the citation yet |
 | `set_equality` | 13 | A set of codes; a missing member and an extra member both fail |
 | `refusal_contract` | 11 | A refusal with a redirect, for questions the CFR cannot answer |
 | `structured_match` | 2 | A multi-field answer |
@@ -103,12 +103,16 @@ python3 -m pytest tests/test_metrology_torture.py   # this one file needs pytest
 ## Known Limitations & Active Hardening
 
 - **`verify_cfr_claim` grades against benchmark keys.** It needs an `item_id` and compares the text to that item's key. It does not check arbitrary free-text compliance claims.
-- **Grader edge cases are being fixed.** A blind red-team pass on 2026-11-25 found inputs that get the wrong verdict. They involve citation parsing, negation, and aligning units between the answer and the key. Fixes are in progress, and each failing case is becoming a regression test.
+- **Yes/no items do not check the citation.** A wiring bug means the grader reads only the yes/no, so an answer citing a section that does not exist still passes.
+- **Grader edge cases are being fixed.** A blind red-team pass on 2026-11-25 found inputs that get the wrong verdict.
+  - Wrong passes: a negation such as "not actually required" read as "yes", an "X rather than Y" answer credited with Y, a hedge hidden behind a reasoning trace, and an unrelated agency mention masking a wrong number.
+  - Wrong fails: a citation written as "§ 25.143", "Ninety (90) days", a `<scratchpad>` tag, a long correct explanation, and a correct answer in different units.
+  - Fixes are in progress, and each failing case is becoming a regression test.
 - **`metrology.py` is not yet used by the grader** (see above).
 - **Source hashes are recorded, not re-checked.** 17 items have no XML hash.
 - **Some table-lookup prompts carry header text run together from the source table** (for example, a missing space). Cleanup is planned.
 - **Some docstrings, demo labels and MCP tool descriptions use older wording that overstates what the code does.** That wording is being removed along with the fixes above.
-- **Network access.** The demo and the MCP server make no network calls. `pipeline.load_domain_config()` fetches a config over HTTPS only when you pass it a URL. Those fetches are limited to an allowlist of hosts, and redirects are refused. `jsonschema` is used if it is installed; it is not required.
+- **Network access.** The demo and the MCP server make no network calls. `pipeline.load_domain_config()` fetches a config only when you pass it a URL. It requires HTTPS except for localhost, accepts only allowlisted hosts, and refuses redirects. `jsonschema` is used if it is installed; it is not required.
 - **The timings above come from one machine.**
 - **This is a research prototype, not legal advice.**
 
