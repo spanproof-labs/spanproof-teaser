@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "description": "SpanProof Federal Registry — 9-title public MIT teaser domains",
+  "domains": {
+    "nrc_10cfr": {
+      "agency": "NRC",
+      "agency_full": "Nuclear Regulatory Commission",
+      "title": "10 CFR",
+      "cfr_title_number": 10,
+      "file": "nrc_10cfr.json",
+      "description": "Nuclear energy regulations — reactor licensing, radiation safety, nuclear materials",
+      "status": "teaser"
+    },
+    "faa_14cfr": {
+      "agency": "FAA",
+      "agency_full": "Federal Aviation Administration",
+      "title": "14 CFR",
+      "cfr_title_number": 14,
+      "file": "faa_14cfr.json",
+      "description": "Federal Aviation Regulations — airworthiness, pilot certification, flight operations",
+      "status": "teaser"
+    },
+    "ear_15cfr": {
+      "agency": "BIS",
+      "agency_full": "Bureau of Industry and Security (Department of Commerce)",
+      "title": "15 CFR",
+      "cfr_title_number": 15,
+      "file": "ear_15cfr.json",
+      "description": "Export Administration Regulations — dual-use export controls, ECCN, Commerce Control List",
+      "status": "teaser"
+    },
+    "sec_17cfr": {
+      "agency": "SEC",
+      "agency_full": "U.S. Securities and Exchange Commission",
+      "title": "17 CFR",
+      "cfr_title_number": 17,
+      "file": "sec_17cfr.json",
+      "description": "Securities regulations — registration, broker-dealer conduct, investment advisers, reporting",
+      "status": "teaser"
+    },
+    "fda_21cfr": {
+      "agency": "FDA",
+      "agency_full": "U.S. Food and Drug Administration",
+      "title": "21 CFR",
+      "cfr_title_number": 21,
+      "file": "fda_21cfr.json",
+      "description": "Food, drug, cosmetic, and medical device regulations — QMSR/cGMP, labeling, food safety",
+      "status": "teaser"
+    },
+    "itar_22cfr": {
+      "agency": "DDTC",
+      "agency_full": "Directorate of Defense Trade Controls (Department of State)",
+      "title": "22 CFR",
+      "cfr_title_number": 22,
+      "file": "itar_22cfr.json",
+      "description": "International Traffic in Arms Regulations — USML, defense articles, arms export controls",
+      "status": "teaser"
+    },
+    "fcc_47cfr": {
+      "agency": "FCC",
+      "agency_full": "Federal Communications Commission",
+      "title": "47 CFR",
+      "cfr_title_number": 47,
+      "file": "fcc_47cfr.json",
+      "description": "Telecommunications regulations — TCPA consent revocation, spectrum allocation, RF safety, equipment authorization",
+      "status": "teaser"
+    },
+    "dfars_48cfr": {
+      "agency": "DoD",
+      "agency_full": "Department of Defense / Federal Acquisition Regulation",
+      "title": "48 CFR",
+      "cfr_title_number": 48,
+      "file": "dfars_48cfr.json",
+      "description": "Federal Acquisition Regulation and DFARS compliance clauses and thresholds",
+      "status": "teaser"
+    },
+    "hazmat_49cfr": {
+      "agency": "DOT",
+      "agency_full": "U.S. Department of Transportation",
+      "title": "49 CFR",
+      "cfr_title_number": 49,
+      "file": "hazmat_49cfr.json",
+      "description": "Hazardous Materials Regulations — classification, packaging, labeling, placarding, and shipping",
+      "status": "teaser"
+    }
+  }
+}
