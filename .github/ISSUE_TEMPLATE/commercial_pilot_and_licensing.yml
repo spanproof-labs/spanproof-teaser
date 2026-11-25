@@ -1,58 +1,36 @@
-name: Commercial pilot or licensing request
-description: Request a private pilot or a commercial snapshot license (V1–V9 CFR verticals, RLVR post-training pack, runtime compliance firewall).
-title: "[Pilot request] <organization> — <product>"
-labels: ["commercial-inquiry"]
+name: Question or bug report
+description: Report a wrong verdict, a bad answer key, or ask a question about regeval or the items.
+title: "[Report] <short summary>"
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for your interest in SpanProof Labs.
-
-        **This issue is public.** Share only what you are comfortable posting: your organization, the product you are interested in, and a way to reach you. Do not include confidential data, pricing you have been quoted elsewhere, or internal documents. We reply within two business days and move detailed scoping to a private channel.
-  - type: input
-    id: organization
-    attributes:
-      label: Organization
-      placeholder: Company or agency name
-    validations:
-      required: true
+        Thanks for taking the time to report this. Issues here are public, so please leave out anything confidential.
   - type: dropdown
-    id: product
+    id: kind
     attributes:
-      label: Product of interest
+      label: What kind of report is this?
       options:
-        - Tier 1 starter slice / paid pilot (one CFR vertical)
-        - Tier 2 full perpetual snapshot
-        - Tier 3 single-vertical exclusive buyout
-        - RLVR post-training task pack
-        - Runtime compliance firewall (OEM)
-        - Not sure yet
+        - Wrong verdict (the grader passed a wrong answer or failed a right one)
+        - Answer key or item problem
+        - Install, run or MCP server problem
+        - Question
     validations:
       required: true
-  - type: dropdown
-    id: vertical
-    attributes:
-      label: Regulatory vertical
-      multiple: true
-      options:
-        - 10 CFR (Nuclear)
-        - 14 CFR (Aviation)
-        - 15 / 22 CFR (Export and trade)
-        - 17 CFR (Securities)
-        - 21 CFR (FDA)
-        - 47 CFR (Telecom / TCPA)
-        - 48 CFR (Federal acquisition)
-        - 49 / 29 / 40 CFR (Hazmat, OSHA, EPA)
-        - Other
   - type: input
-    id: contact
+    id: item_id
     attributes:
-      label: Preferred contact
-      description: A work email or LinkedIn profile URL where we can reach you. It will be visible publicly on this issue.
-    validations:
-      required: true
+      label: Item ID (if any)
+      placeholder: e.g. GT-K-DFARS-000010
   - type: textarea
-    id: use_case
+    id: details
     attributes:
-      label: Intended use (optional)
-      description: One or two sentences on what you want to evaluate or deploy.
+      label: What happened
+      description: For a wrong verdict, paste the answer text you graded, the verdict you got, and the verdict you expected.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Python version and commit
+      placeholder: e.g. Python 3.12, commit d106cc7
