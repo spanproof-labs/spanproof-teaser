@@ -101,6 +101,8 @@ This public repository is intentionally scoped as a zero-signup **MIT open-core 
 - **Tier 2 — Full Perpetual Snapshot (`$14,900` Federal/SBIR COTS sub-MPT · `$19,500–$24,500` Commercial B2B):** Frozen full codebase + `26,485`-item bank + `pull_ecfr.py` tooling, governed by a mandatory **7-calendar-day** Escrow.com substantive engineering inspection window (`pytest` / `verify.py`).
 - **Tier 3 — Per-Vertical Pre-Seat-1 Exclusive Buyout (`$45,000–$65,000`):** Exclusive rights strictly over **one** named CFR vertical slice (`48 CFR GovCon`, `15/22 CFR Trade`, `10 CFR Nuclear`, `14 CFR Aviation`, `49/29/40 CFR HazMat`, or `ClaimTruth VA/SSDI`) via Escrow.com with the mandatory 7-calendar-day inspection window; Seller retains unrestricted rights to license `regeval` and all other CFR verticals independently.
 
+**Request a pilot or license:** open a [commercial pilot request](https://github.com/spanproof-labs/spanproof-teaser/issues/new?template=commercial_pilot_and_licensing.yml). The issue is public, so include only your organization, the product, and a way to reach you; we reply within two business days.
+
 ---
 
 ## Teaser Coverage (`325` Items Across 9 CFR Titles)

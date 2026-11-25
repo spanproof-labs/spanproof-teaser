@@ -1,0 +1,58 @@
+name: Commercial pilot or licensing request
+description: Request a private pilot or a commercial snapshot license (V1–V9 CFR verticals, RLVR post-training pack, runtime compliance firewall).
+title: "[Pilot request] <organization> — <product>"
+labels: ["commercial-inquiry"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for your interest in SpanProof Labs.
+
+        **This issue is public.** Share only what you are comfortable posting: your organization, the product you are interested in, and a way to reach you. Do not include confidential data, pricing you have been quoted elsewhere, or internal documents. We reply within two business days and move detailed scoping to a private channel.
+  - type: input
+    id: organization
+    attributes:
+      label: Organization
+      placeholder: Company or agency name
+    validations:
+      required: true
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product of interest
+      options:
+        - Tier 1 starter slice / paid pilot (one CFR vertical)
+        - Tier 2 full perpetual snapshot
+        - Tier 3 single-vertical exclusive buyout
+        - RLVR post-training task pack
+        - Runtime compliance firewall (OEM)
+        - Not sure yet
+    validations:
+      required: true
+  - type: dropdown
+    id: vertical
+    attributes:
+      label: Regulatory vertical
+      multiple: true
+      options:
+        - 10 CFR (Nuclear)
+        - 14 CFR (Aviation)
+        - 15 / 22 CFR (Export and trade)
+        - 17 CFR (Securities)
+        - 21 CFR (FDA)
+        - 47 CFR (Telecom / TCPA)
+        - 48 CFR (Federal acquisition)
+        - 49 / 29 / 40 CFR (Hazmat, OSHA, EPA)
+        - Other
+  - type: input
+    id: contact
+    attributes:
+      label: Preferred contact
+      description: A work email or LinkedIn profile URL where we can reach you. It will be visible publicly on this issue.
+    validations:
+      required: true
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Intended use (optional)
+      description: One or two sentences on what you want to evaluate or deploy.
